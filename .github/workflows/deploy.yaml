@@ -23,4 +23,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-${{ github.sha }}.png
-          path: test/test.png
+          path: test.png
