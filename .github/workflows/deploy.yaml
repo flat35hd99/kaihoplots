@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11.x'
+          cache: 'pip'
+          cache-dependency-path: test/requirements.txt
+      - name: Install test dependencies
+        run: pip install -r test/requirements.txt
+      - name: Run tests
+        run: python test/main.py
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-${{ github.sha }}.png
+          path: test/test.png
