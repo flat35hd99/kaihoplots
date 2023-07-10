@@ -7,4 +7,4 @@ version = "0.0.1"
 description = "Kaiho Stylesheet for matplotlib"
 
 [tool.setuptools.package-data]
-kaihoplots = ["styles/**/*.mplstyle"]
+kaihoplots = ["*.mplstyle"]
