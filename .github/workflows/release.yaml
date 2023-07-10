@@ -9,7 +9,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    depends-on: test
+    needs: test
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
